@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Students>  
+  <Student>
+    <MSSV>121201</MSSV>
+    <HoTen>Nguyen Van A</HoTen>
+    <Lop>CTK36</Lop>
+    <HoKy>1</HoKy>
+    <DTB>3.6</DTB>
+  </Student>
+  <Student>
+    <MSSV>121601</MSSV>
+    <HoTen>Nguyen Van B</HoTen>
+    <Lop>CTK36</Lop>
+    <HoKy>1</HoKy>
+    <DTB>2.5</DTB>
+  </Student>
+</Students>

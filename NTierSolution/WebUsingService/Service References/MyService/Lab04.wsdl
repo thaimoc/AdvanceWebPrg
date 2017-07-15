@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Add">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="x" type="tns:Fraction" />
+            <s:element minOccurs="0" maxOccurs="1" name="y" type="tns:Fraction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Fraction">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Numerator" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Denominator" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddResult" type="tns:Fraction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Subtraction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="x" type="tns:Fraction" />
+            <s:element minOccurs="0" maxOccurs="1" name="y" type="tns:Fraction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubtractionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubtractionResult" type="tns:Fraction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Multiplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="x" type="tns:Fraction" />
+            <s:element minOccurs="0" maxOccurs="1" name="y" type="tns:Fraction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MultiplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MultiplicationResult" type="tns:Fraction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Division">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="x" type="tns:Fraction" />
+            <s:element minOccurs="0" maxOccurs="1" name="y" type="tns:Fraction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DivisionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DivisionResult" type="tns:Fraction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientIP">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetClientIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClientIPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MoneyConvert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="x" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="tns:MoneyConvertEnum" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="MoneyConvertEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="USD2VND" />
+          <s:enumeration value="VND2USD" />
+          <s:enumeration value="EUR2VND" />
+          <s:enumeration value="VND2EUR" />
+          <s:enumeration value="YP2VND" />
+          <s:enumeration value="VND2YP" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="MoneyConvertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MoneyConvertResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Factorial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="x" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FactorialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FactorialResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NPrimeNumbers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="n" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NPrimeNumbersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NPrimeNumbersResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IsPrime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="number" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPrimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsPrimeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MD5Encrypt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MD5EncryptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MD5EncryptResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MD5FileEncrypt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MD5FileEncryptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MD5FileEncryptResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SHA1Encrypt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SHA1EncryptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SHA1EncryptResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SHA1FileEncrypt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SHA1FileEncryptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SHA1FileEncryptResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudents">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentsResult" type="tns:ArrayOfStudent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStudent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Student" nillable="true" type="tns:Student" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Student">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetStudentsNameOrderbyName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentsNameOrderbyNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentsNameOrderbyNameResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetWeatherInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetWeatherInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWeatherInfoResult" type="tns:ArrayOfCity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="City" nillable="true" type="tns:City" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="City">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Weather" type="tns:WeatherInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="Weathers" type="tns:ArrayOfWeatherInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WeatherInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Temp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Condition" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Image" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWeatherInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WeatherInfo" nillable="true" type="tns:WeatherInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ChungThucSoapHeader">
+        <s:complexType />
+      </s:element>
+      <s:element name="ChungThucSoapHeaderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChungThucSoapHeaderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChungThuc" type="tns:ChungThuc" />
+      <s:complexType name="ChungThuc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddSoapIn">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="AddSoapOut">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubtractionSoapIn">
+    <wsdl:part name="parameters" element="tns:Subtraction" />
+  </wsdl:message>
+  <wsdl:message name="SubtractionSoapOut">
+    <wsdl:part name="parameters" element="tns:SubtractionResponse" />
+  </wsdl:message>
+  <wsdl:message name="MultiplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:Multiplication" />
+  </wsdl:message>
+  <wsdl:message name="MultiplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:MultiplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="DivisionSoapIn">
+    <wsdl:part name="parameters" element="tns:Division" />
+  </wsdl:message>
+  <wsdl:message name="DivisionSoapOut">
+    <wsdl:part name="parameters" element="tns:DivisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClientIPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClientIP" />
+  </wsdl:message>
+  <wsdl:message name="GetClientIPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClientIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="MoneyConvertSoapIn">
+    <wsdl:part name="parameters" element="tns:MoneyConvert" />
+  </wsdl:message>
+  <wsdl:message name="MoneyConvertSoapOut">
+    <wsdl:part name="parameters" element="tns:MoneyConvertResponse" />
+  </wsdl:message>
+  <wsdl:message name="FactorialSoapIn">
+    <wsdl:part name="parameters" element="tns:Factorial" />
+  </wsdl:message>
+  <wsdl:message name="FactorialSoapOut">
+    <wsdl:part name="parameters" element="tns:FactorialResponse" />
+  </wsdl:message>
+  <wsdl:message name="NPrimeNumbersSoapIn">
+    <wsdl:part name="parameters" element="tns:NPrimeNumbers" />
+  </wsdl:message>
+  <wsdl:message name="NPrimeNumbersSoapOut">
+    <wsdl:part name="parameters" element="tns:NPrimeNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsPrimeSoapIn">
+    <wsdl:part name="parameters" element="tns:IsPrime" />
+  </wsdl:message>
+  <wsdl:message name="IsPrimeSoapOut">
+    <wsdl:part name="parameters" element="tns:IsPrimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="MD5EncryptSoapIn">
+    <wsdl:part name="parameters" element="tns:MD5Encrypt" />
+  </wsdl:message>
+  <wsdl:message name="MD5EncryptSoapOut">
+    <wsdl:part name="parameters" element="tns:MD5EncryptResponse" />
+  </wsdl:message>
+  <wsdl:message name="MD5FileEncryptSoapIn">
+    <wsdl:part name="parameters" element="tns:MD5FileEncrypt" />
+  </wsdl:message>
+  <wsdl:message name="MD5FileEncryptSoapOut">
+    <wsdl:part name="parameters" element="tns:MD5FileEncryptResponse" />
+  </wsdl:message>
+  <wsdl:message name="SHA1EncryptSoapIn">
+    <wsdl:part name="parameters" element="tns:SHA1Encrypt" />
+  </wsdl:message>
+  <wsdl:message name="SHA1EncryptSoapOut">
+    <wsdl:part name="parameters" element="tns:SHA1EncryptResponse" />
+  </wsdl:message>
+  <wsdl:message name="SHA1FileEncryptSoapIn">
+    <wsdl:part name="parameters" element="tns:SHA1FileEncrypt" />
+  </wsdl:message>
+  <wsdl:message name="SHA1FileEncryptSoapOut">
+    <wsdl:part name="parameters" element="tns:SHA1FileEncryptResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudents" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentsNameOrderbyNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentsNameOrderbyName" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentsNameOrderbyNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentsNameOrderbyNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWeatherInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWeatherInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWeatherInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWeatherInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChungThucSoapHeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:ChungThucSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ChungThucSoapHeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:ChungThucSoapHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChungThucSoapHeaderChungThuc">
+    <wsdl:part name="ChungThuc" element="tns:ChungThuc" />
+  </wsdl:message>
+  <wsdl:portType name="Lab04Soap">
+    <wsdl:operation name="Add">
+      <wsdl:input message="tns:AddSoapIn" />
+      <wsdl:output message="tns:AddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Subtraction">
+      <wsdl:input message="tns:SubtractionSoapIn" />
+      <wsdl:output message="tns:SubtractionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Multiplication">
+      <wsdl:input message="tns:MultiplicationSoapIn" />
+      <wsdl:output message="tns:MultiplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Division">
+      <wsdl:input message="tns:DivisionSoapIn" />
+      <wsdl:output message="tns:DivisionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientIP">
+      <wsdl:input message="tns:GetClientIPSoapIn" />
+      <wsdl:output message="tns:GetClientIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoneyConvert">
+      <wsdl:input message="tns:MoneyConvertSoapIn" />
+      <wsdl:output message="tns:MoneyConvertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Factorial">
+      <wsdl:input message="tns:FactorialSoapIn" />
+      <wsdl:output message="tns:FactorialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NPrimeNumbers">
+      <wsdl:input message="tns:NPrimeNumbersSoapIn" />
+      <wsdl:output message="tns:NPrimeNumbersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPrime">
+      <wsdl:input message="tns:IsPrimeSoapIn" />
+      <wsdl:output message="tns:IsPrimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MD5Encrypt">
+      <wsdl:input message="tns:MD5EncryptSoapIn" />
+      <wsdl:output message="tns:MD5EncryptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MD5FileEncrypt">
+      <wsdl:input message="tns:MD5FileEncryptSoapIn" />
+      <wsdl:output message="tns:MD5FileEncryptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SHA1Encrypt">
+      <wsdl:input message="tns:SHA1EncryptSoapIn" />
+      <wsdl:output message="tns:SHA1EncryptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SHA1FileEncrypt">
+      <wsdl:input message="tns:SHA1FileEncryptSoapIn" />
+      <wsdl:output message="tns:SHA1FileEncryptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudents">
+      <wsdl:input message="tns:GetStudentsSoapIn" />
+      <wsdl:output message="tns:GetStudentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsNameOrderbyName">
+      <wsdl:input message="tns:GetStudentsNameOrderbyNameSoapIn" />
+      <wsdl:output message="tns:GetStudentsNameOrderbyNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWeatherInfo">
+      <wsdl:input message="tns:GetWeatherInfoSoapIn" />
+      <wsdl:output message="tns:GetWeatherInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChungThucSoapHeader">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">asdfas</wsdl:documentation>
+      <wsdl:input message="tns:ChungThucSoapHeaderSoapIn" />
+      <wsdl:output message="tns:ChungThucSoapHeaderSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Lab04Soap" type="tns:Lab04Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://tempuri.org/Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtraction">
+      <soap:operation soapAction="http://tempuri.org/Subtraction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiplication">
+      <soap:operation soapAction="http://tempuri.org/Multiplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Division">
+      <soap:operation soapAction="http://tempuri.org/Division" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientIP">
+      <soap:operation soapAction="http://tempuri.org/GetClientIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoneyConvert">
+      <soap:operation soapAction="http://tempuri.org/MoneyConvert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Factorial">
+      <soap:operation soapAction="http://tempuri.org/Factorial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NPrimeNumbers">
+      <soap:operation soapAction="http://tempuri.org/NPrimeNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPrime">
+      <soap:operation soapAction="http://tempuri.org/IsPrime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MD5Encrypt">
+      <soap:operation soapAction="http://tempuri.org/MD5Encrypt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MD5FileEncrypt">
+      <soap:operation soapAction="http://tempuri.org/MD5FileEncrypt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SHA1Encrypt">
+      <soap:operation soapAction="http://tempuri.org/SHA1Encrypt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SHA1FileEncrypt">
+      <soap:operation soapAction="http://tempuri.org/SHA1FileEncrypt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudents">
+      <soap:operation soapAction="http://tempuri.org/GetStudents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsNameOrderbyName">
+      <soap:operation soapAction="http://tempuri.org/GetStudentsNameOrderbyName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeatherInfo">
+      <soap:operation soapAction="http://tempuri.org/GetWeatherInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChungThucSoapHeader">
+      <soap:operation soapAction="http://tempuri.org/ChungThucSoapHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ChungThucSoapHeaderChungThuc" part="ChungThuc" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Lab04Soap12" type="tns:Lab04Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="http://tempuri.org/Add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtraction">
+      <soap12:operation soapAction="http://tempuri.org/Subtraction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiplication">
+      <soap12:operation soapAction="http://tempuri.org/Multiplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Division">
+      <soap12:operation soapAction="http://tempuri.org/Division" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientIP">
+      <soap12:operation soapAction="http://tempuri.org/GetClientIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoneyConvert">
+      <soap12:operation soapAction="http://tempuri.org/MoneyConvert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Factorial">
+      <soap12:operation soapAction="http://tempuri.org/Factorial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NPrimeNumbers">
+      <soap12:operation soapAction="http://tempuri.org/NPrimeNumbers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPrime">
+      <soap12:operation soapAction="http://tempuri.org/IsPrime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MD5Encrypt">
+      <soap12:operation soapAction="http://tempuri.org/MD5Encrypt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MD5FileEncrypt">
+      <soap12:operation soapAction="http://tempuri.org/MD5FileEncrypt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SHA1Encrypt">
+      <soap12:operation soapAction="http://tempuri.org/SHA1Encrypt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SHA1FileEncrypt">
+      <soap12:operation soapAction="http://tempuri.org/SHA1FileEncrypt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudents">
+      <soap12:operation soapAction="http://tempuri.org/GetStudents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsNameOrderbyName">
+      <soap12:operation soapAction="http://tempuri.org/GetStudentsNameOrderbyName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeatherInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetWeatherInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChungThucSoapHeader">
+      <soap12:operation soapAction="http://tempuri.org/ChungThucSoapHeader" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ChungThucSoapHeaderChungThuc" part="ChungThuc" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Lab04">
+    <wsdl:port name="Lab04Soap" binding="tns:Lab04Soap">
+      <soap:address location="http://localhost:25056/Lab04.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Lab04Soap12" binding="tns:Lab04Soap12">
+      <soap12:address location="http://localhost:25056/Lab04.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

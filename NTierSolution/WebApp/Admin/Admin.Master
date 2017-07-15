@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="WebApp.Admin.Admin" %>
+
+<%@ Register src="Controls/ThemeSwitch.ascx" tagname="ThemeSwitch" tagprefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <link href="Styles/site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script src="../Scripts/jquery-2.0.0.min.js" type="text/javascript"></script>    
+    <script src="Scripts/tinymce/jquery.tinymce.js" type="text/javascript"></script>
+    <script src="Scripts/scripts.js" type="text/javascript"></script>
+    <script src="Scripts/js.js" type="text/javascript"></script>
+
+    <script src="../Scripts/jquery-ui-1.10.2.min.js" type="text/javascript"></script>
+    <link href="Styles/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script>
+        $(function () {
+            $(".datepicker").datepicker();
+        });
+    </script>
+    
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    Administrator
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="loginDisplay">
+                <uc1:ThemeSwitch ID="ThemeSwitch1" runat="server" />
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Admin/Default.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/Admin/Members.aspx" Text="Members"/>
+                        <asp:MenuItem NavigateUrl="~/Admin/Categories.aspx" Text="Categories"/>
+                        <asp:MenuItem NavigateUrl="~/Admin/Coursees.aspx" Text="Course"/>
+                        <asp:MenuItem NavigateUrl="~/Admin/Classes.aspx" Text="Classes"/>
+                    </Items>
+                </asp:Menu>
+
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>

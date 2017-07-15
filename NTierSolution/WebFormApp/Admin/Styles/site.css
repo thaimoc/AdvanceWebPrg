@@ -1,0 +1,218 @@
+﻿body {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 67.5%;
+}
+.container_16 {
+    font-size: 1.2em;
+}
+a, a:visited, a:active {
+    text-decoration: underline;
+    color: black;
+}
+a:hover {
+    color: Red;
+}
+p{
+    margin-bottom:0.5em;
+}
+#header{
+    position:relative;
+}
+#header h1 {
+    padding: 1em 0 1em 0.8em;
+    font-size: 2.2em;
+}
+#header h1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#mainmenu {
+    background: maroon;
+    padding: 0.5em 0em 0.7em 0.5em;
+}
+#mainmenu a {
+    color: #FFCC00;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 16px;
+    padding-left: 10px;
+    font-size: 0.9em;
+}
+
+#mainmenu a:hover {
+    color: white;
+}
+
+#content{
+    margin:1em 0 0 0;
+}
+.title {
+    color: Maroon;
+    font-size: 1.7em;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+#userinfo{
+    right:0.5em;
+    bottom:1em;
+    position:absolute;
+}
+
+.list {
+    width: 100%;
+}
+.list th {
+    text-align: left;
+    padding:6px 5px;
+    border-bottom:solid 3px #6678B1;
+    vertical-align: middle;
+}
+.list th a{
+    color:Maroon;
+}
+.list td {
+    vertical-align: middle;
+    text-align:center;
+    padding: 6px 2px;
+}
+.list tr.even {
+    background-color: #eee;
+}
+.list .cid{
+    width:20px;
+}
+.list .small{
+    width:30px;
+}
+.list .link{
+    text-align:left;
+}
+.list .image{
+    width:24px;
+    height:24px;
+}
+.list .id{
+    width:20px;
+    text-align:right;
+}
+.status{
+    font-weight:bold;
+    margin-bottom:1em;
+    display:block;
+    color:Red;
+}
+.form .textEntry{
+    background-color:#fff;
+    border: solid 1px #bbb;
+    width:350px;
+    padding:2px;
+}
+.form textarea.textEntry{
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size:0.9em;
+}
+.form td{
+    padding:2px;
+    vertical-align:top;
+}
+
+.form td.info{
+    font-weight:bold;
+    padding:8px 0px;
+}
+
+.form td.label{
+    width:150px;
+}
+.form span.require{
+    color:Red;
+}
+.form .failureNotification{
+    color:Red;
+}
+
+.pager {
+    margin: 1em 0;
+    text-align: right;
+}
+.pager a.disabled{
+    text-decoration:none;
+    color:Gray;
+}
+.pager a.current{
+    text-decoration:none;
+    color:Black;
+    font-weight:bold;
+}
+
+.upload{
+    font-size:1.2em;
+    padding:4px;
+}
+.upload hr{
+    margin-top:1em;
+    color:Maroon;
+}
+.imagelist{
+    overflow:scroll;
+    height:265px;
+}
+.imagelist img{
+    width:100px;
+    height:100px;
+}
+
+.imagelist td{
+    text-align:center;
+    padding:2px;
+}
+
+.status
+{
+    font-weight:bold;
+    margin-bottom:1em;
+    display:block;
+    color:Red;
+}
+.form .textEntry
+{
+    background-color:#fff;
+    border: solid 1px #bbb;
+    width:350px;
+    padding:2px;
+}
+.form textarea.textEntry
+{
+    font-family:Verdana, Helvetica, Arial, Sans-Serif;
+    font-size:0.9em;
+}
+.form td
+{
+    padding: 2px;
+    vertical-align:top;
+}
+.form td.info
+{
+    font-weight:bold;
+    padding:8px 0px;
+}
+.form td.label
+{
+    width:140px;
+}
+.form span.require
+{
+    color:Red;
+    padding-right:2px;
+}
+.form td.notreq
+{
+    padding-left:12px;
+}
+.form .failureNotification
+{
+    color:Red;
+}

